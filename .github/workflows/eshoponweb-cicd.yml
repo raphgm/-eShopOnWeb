@@ -8,7 +8,7 @@ on:
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-eshoponweb-prod
+  RESOURCE-GROUP: az2006-rg
   LOCATION: northeurope
   TEMPLATE-FILE: infra/webapp.bicep
   SUBSCRIPTION-ID: 69738f24-52ea-40e6-8cd3-c763c19cc948
