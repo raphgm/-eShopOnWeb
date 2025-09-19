@@ -55,8 +55,7 @@ jobs:
   # Use Bicep to deploy infrastructure + Publish webapp 
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: 'Development'
+    # environment: production
     needs: buildandtest
     steps:
     
@@ -82,8 +81,9 @@ jobs:
            
     # Deploy Azure WebApp using Bicep file
     - name: deploy
-      uses: azure/arm-deploy@v2
+      uses: Azure/arm-deploy@v1
       with:
+        scope: resourcegroup
         subscriptionId: ${{ env.SUBSCRIPTION-ID }}
         resourceGroupName: ${{ env.RESOURCE-GROUP }}
         template: bicep-template/webapp.bicep
